@@ -1,5 +1,6 @@
 package com.example.arjun27.mvp_dagger_retrofit_rx.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.arjun27.mvp_dagger_retrofit_rx.R;
 import com.example.arjun27.mvp_dagger_retrofit_rx.login.Interfacelogin.LoginActvityMVP;
+import com.example.arjun27.mvp_dagger_retrofit_rx.retrofit.main_activity.MainActivity;
 
 public class LoginActivity extends AppCompatActivity implements LoginActvityMVP.View {
 
@@ -32,6 +34,7 @@ public class LoginActivity extends AppCompatActivity implements LoginActvityMVP.
             @Override
             public void onClick(View view) {
                 presenter.loginButtonClicked();
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
 
             }
         });
